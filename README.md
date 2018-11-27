@@ -17,3 +17,4 @@
 ### Ideas:
 * Keyword based
 * Human summarization bitext?
+* Sense: mark keywords/function words with sense analysis
