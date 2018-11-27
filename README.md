@@ -7,6 +7,8 @@
 ### Project Architecture
   Core function: select the most relevant sentences as the summary of a given text. Assess relevance by counting keyword frequency. Determine keywords by evaluating type frequency. To measure how accurate the summarization is, calculate the type loss rate.
 * [Example online automatic summarization tool](https://smmry.com/)
+* [Rouge Score](https://arxiv.org/pdf/1509.00685.pdf)
+* [TextSum](https://github.com/tensorflow/models/tree/master/research/textsum)
 ### Project Timeline
 1. Dec 2nd: finish project planning
 2. Dec 9th: finish core function programming
