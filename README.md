@@ -1,5 +1,7 @@
 # python_final_project
-# Due ~12/11-19
+
+Due ~12/11-19
+
 An extraction based automatic summarization project for linguistics 131
 
 Project Architecture
@@ -9,3 +11,6 @@ Project Timeline
   Dec 9th: finish core function programming
   Dec 11th: compare perfromance with similar tools
   Dec 19th?: final write up
+Ideas:
+  Keyword based
+  Human summarization bitext?
