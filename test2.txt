@@ -1,0 +1,16 @@
+Caiming Xiong, a research scientist at Salesforce who contributed to the work, says his team’s algorithm, while imperfect, could summarize daily news articles, or provide a synopsis of customer e-mails. The latter could be especially useful for Salesforce’s own platform.
+
+The team’s algorithm uses a combination of approaches to achieve its improvement. The system learns from examples of good summaries, an approach called supervised learning, but also employs a kind of artificial attention to the text it is ingesting and outputting. This helps ensure that it doesn’t produce too many repetitive strands of text, a common problem with summarization algorithms.
+
+The system experiments in order to generate summaries of its own using a process called reinforcement learning. Inspired by the way animals seem to learn, this involves providing positive feedback for actions that lead toward a particular objective. Reinforcement learning has been used to train computers to do impressive new things, like playing complex games or controlling robots (see “10 Breakthrough Technologies 2017: Reinforcement Learning”). Those working on conversational interfaces are increasingly now looking at reinforcement learning as a way to improve their systems.
+
+Kristian Hammond, a professor at Northwestern University, and the founder of Narrative Science, a company that generates narrative reports from raw data, says the Salesforce research is a good advance, but it also shows the limits of relying purely on statistical machine learning. “At some point, we have to admit that we need a little bit of semantics and a little bit of syntactic knowledge in these systems in order for them to be fluid and fluent,” says Hammond.
+
+Hammond says the use of an attention mechanism mimics, at a very simple level, the way a person pays attention to what he's just just said. “When you say something, the details of how you say it are driven by the context of what you have said before,” he says. “This work is a step in that direction.”
+
+Would you trust a machine to summarize important documents for you?
+Tell us why.
+Improving the language skills of computers may also prove important in the quest to advance artificial intelligence. A startup called Maluuba, which was acquired earlier this year by Microsoft, recently produced a system capable of generating relevant questions from text. The Maluuba team also used a combination of supervised learning and reinforcement learning.
+
+Adam Trischler, senior research scientist at Maluuba, says asking relevant questions is an important part of learning, so it is important to create inquisitive machines, too. “The ultimate goal is to use question-and-answering in a dialogue,” Trischler says. “What if a machine could go out and gather information and then ask its own questions?
+
