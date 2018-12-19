@@ -1,20 +1,22 @@
 # python_final_project
-
-## Due ~12/11-19
-
 ## An extraction based automatic summarization project for linguistics 131
 
-### Project Architecture
-  Core function: select the most relevant sentences as the summary of a given text. Assess relevance by counting keyword frequency. Determine keywords by evaluating type frequency. To measure how accurate the summarization is, calculate the type loss rate.
-* [Example online automatic summarization tool](https://smmry.com/)
-* [Rouge Score](https://arxiv.org/pdf/1509.00685.pdf)
-* [TextSum](https://github.com/tensorflow/models/tree/master/research/textsum)
-### Project Timeline
-1. Dec 2nd: finish project planning
-2. Dec 9th: finish core function programming
-3. Dec 11th: compare perfromance with similar tools
-4. Dec 19th?: final write up
-### Ideas:
-* Keyword based
-* Human summarization bitext?
-* Sense: mark keywords/function words with sense analysis
+### Brief Description:
+Core function: select the most relevant sentences as the summary of a given text. 
+To do this, we make use of TFIDF and sentence length to determine sentence relevance.
+
+### Instructions:
+1.  Please run the file named original_IDF.py first - this will create an initial IDF dictionary
+    that will be implemented in the summarizer. This file should only be run once.
+
+2.  Next, go to summarize_file.py to summarize your file. We have already put some code to run one of our examples
+    'file = Summarize_file("test.txt")'. In order to try our summarizer on other .txt files please change
+    file = Summarize_file("test.txt") to  file = Summarize_file(<yourfilename>) and run the file. The IDF dictionary
+    and its data will update and grow everytime you summarize a new file in summarize.py. Everytime you run a file, you
+    can view the results in results.txt
+
+3.  To summarize an html file, first run it through the process_html.py file 
+  
+### Paper:
+ Please go to README.txt for a paper reflecting our process and findings.
+
