@@ -1,6 +1,14 @@
 """
+
 This code takes a url, extracts text from it, removes html tags and prints the text string to a file
 This should be used to prepare text from a url to be summarized
+
+Team: Jade Garisch, Marjan Kamyab, Micheal Zhong
+Last update: December 19, 2018
+
+INSTRUCTIONS: Go to __name__ == main method and insert the url link and what you want your file to be called.
+EXAMPLE: html_file = Process_html('<insert url here>', '<insert filename here>')
+Please use a new filename for each different url. Then simply run the file.
 
 """
 
@@ -12,7 +20,7 @@ import re
 
 
 class Process_html:
-
+    #initializes class variables
     def __init__(self, url, filename):
         self.html = urllib.request.urlopen(url).read()
         self.filename = filename
