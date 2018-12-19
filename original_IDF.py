@@ -1,7 +1,7 @@
 """
 
 This program works out the original IDF count for each word in the NLTK provided Reuter's Corpus
-Please simply run the file and only do it once
+Please simply run the file and only do it once.
 
 Team: Jade Garisch, Marjan Kamyab, Micheal Zhong
 Last update: December 19, 2018
@@ -18,8 +18,7 @@ import numpy as np
 files = [nltk.corpus.reuters.words(name) for name in nltk.corpus.reuters.fileids()]
 file_names = [name for name in nltk.corpus.reuters.fileids()]
 
-# IDF is based on the entire corpus.
-# For testing purposes, pass in the words variable.
+#this function creates a dictionary with the IDF
 def get_IDF(corpus):
     lemma = nltk.stem.WordNetLemmatizer()
     words = set(
@@ -28,8 +27,9 @@ def get_IDF(corpus):
     c = []
     for thing in corpus:
         c.append(set([lemma.lemmatize(word.lower()) for word in thing if word not in string.punctuation]))
-    # Be sure to remove the progress updates.
+    # kept progress updates as they are helpful.
     m = 0
+    print('Amount of words searched: ')
     for word in words:
         for thing in c:
             if word in thing:
@@ -37,22 +37,22 @@ def get_IDF(corpus):
             m += 1
             if m % 10000000 == 0:
                 print(m)
-    # Moved the code below to allow update by a new article.
-    # for word, value in idf_dict.items():
-    #     idf_dict[word] = math.log10(len(files) / float(value))
     return idf_dict
 
+#this function returns the amount of articles in the entire corpus
 def corpus_size(corpus):
     return len(corpus)
 
+#this function saves the corpus size to a file
 def save_size(size):
     with open('size.txt', 'w') as f:
         f.write('%d' % size)
 
+#function saves a data structure to a numpy file
 def numpy_it(filename, thing):
     np.save(filename, thing)
 
-
+#main method
 if __name__ == "__main__":
     print("Searching through corpus and creating IDF dictionary... Please wait until you see TRAINING DONE")
     idfs = get_IDF(files)
