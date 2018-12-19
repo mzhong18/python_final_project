@@ -1,4 +1,19 @@
-#this program summarizes .txt files - we have provided a few examples
+
+"""
+
+This program summarizes .txt files - we have provided a few examples
+
+Team: Jade Garisch, Marjan Kamyab, Micheal Zhong
+Last update: December 19, 2018
+
+INSTRUCTIONS: We have already put some code to run one of our examples 'file = Summarize_file("test.txt")'. 
+In order to try our summarizer on other .txt files please change file = Summarize_file("test.txt") to 
+file = Summarize_file(yourfilename) and run the file. The IDF dictionary and its data will update and grow everytime 
+you summarize a new file in summarize.py. Everytime you run a file, you can view the results in results.txt
+
+
+
+"""
 import nltk
 import math
 import string
