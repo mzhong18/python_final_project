@@ -1,3 +1,14 @@
+"""
+
+This program works out the original IDF count for each word in the NLTK provided Reuter's Corpus
+Please simply run the file and only do it once
+
+Team: Jade Garisch, Marjan Kamyab, Micheal Zhong
+Last update: December 19, 2018
+
+
+"""
+
 import nltk
 import math
 import string
