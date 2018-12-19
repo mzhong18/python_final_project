@@ -42,8 +42,7 @@ class Summarize_file:
                             self.word_tokens if word not in string.punctuation and word not in
                             nltk.corpus.stopwords.words('english')]))
 
-    # Here, pass in the list of words in a document to grab the document TF score.
-    # For testing purposes, pass in from the files variable. e.g. files[0]
+    # This function determines the term frequency for each word in the file.
     def get_TF(self):
         tf_dict = {}
         lemma = nltk.stem.WordNetLemmatizer()
@@ -54,7 +53,8 @@ class Summarize_file:
             tf_dict[word] = 0.5 + 0.5 * (lemma_list.count(word) / float(len(lemma_list))) / maximum
         return tf_dict
 
-    #updating IDF
+    #This function updates the IDF dictionary. It is only called if the file has not been processed through this
+    #summarizer before.
     def idf_update(self):
         lemma = nltk.stem.WordNetLemmatizer()
         lemmas = set([lemma.lemmatize(word.lower()) for word in set(self.word_tokens) if word not in string.punctuation])
@@ -64,33 +64,35 @@ class Summarize_file:
             else:
                 self.idfs[thing] += 1
         np.save('idf_dict.npy', self.idfs)
-        return self.idfs #remember to save after updating
-
+        return self.idfs 
+    
+    #This function updates the list of filenames. It is only called if the file has not been processed through this
+    #summarizer before.
     def files_update(self):
         self.files = np.append(self.files, self.filename)
         np.save('files.npy', self.files)
         return self.files
-
+    
+    #This function updates the count of articles that have been processed. It is only called if the file has not
+    #been processed through this summarizer before.
     def size_update(self):
         self.size += 1
         with open('size.txt', 'w') as f:
             f.write(str(self.size))
         return self.size
 
-    # This is fairly self-explanatory.
+    #This function uses the TF and IDF to compute the TFIDF
     def compute_TFIDF(self, tfs, idfs):
         tf_idf = {}
         for word, value in tfs.items():
-            # Skip new article processing relic.
             if word == ' ':
                 continue
             tf_idf[word] = value * idfs[word]
         return tf_idf
 
-    # WIP. Pass in a sentence tokenized file and indicate how many words and sentences one would like to grab.
+    #This function is used to rank sentences in terms of revelance and returns 'threshold' sentences as a sentence summary
+    #Users should input the amount of sentences they want returned
     def document_keywords(self, threshold):
-        # The very first if statement has not been fully tested yet.
-        # np.nditer(a)
         if self.filename not in np.nditer(self.files):
             self.idfs = self.idf_update()
             self.size = self.size_update()
@@ -150,7 +152,8 @@ class Summarize_file:
         summ_string = ' '.join(summ)
         vectors = vectorizer.fit_transform([self.string, summ_string])
         return '%3g' % ((vectors * vectors.T).A)[0, 1]
-
+    
+    #This function prints the summary to results.txt
     def print_summ(self, summary):
         new_s = ''
         for sent in summary:
