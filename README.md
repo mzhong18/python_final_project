@@ -17,6 +17,5 @@ To do this, we make use of TFIDF and sentence length to determine sentence relev
 
 3.  To summarize an html file, first run it through the process_html.py file 
   
-### Paper:
- Please go to README.txt for a paper reflecting our process and findings.
+
 
